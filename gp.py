@@ -23,7 +23,6 @@ class ExactGPModel(gpytorch.models.ExactGP):
         covar_x = self.covar_module(x)
         return gpytorch.distributions.MultivariateNormal(mean_x, covar_x)
 
-
 def main_run(likelihood, model: ExactGPModel, train_x, train_y, test_x, test_y):
     model.train()
     likelihood.train()
